@@ -1,0 +1,27 @@
+.content-subSection{
+  width: 320px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0,0.1);
+}
+.center{
+  margin: auto;
+}
+input{
+  height: 45px;
+  width: 100%;
+  display: block;
+}
+input{
+  margin-bottom: 10px;
+}
+button{
+  margin-top: 10px;
+  margin-bottom: 0;
+  width: 100%;
+  padding: 5px 20px;
+}
+h4{
+  text-align: center;
+  margin-bottom: 15px;
+}

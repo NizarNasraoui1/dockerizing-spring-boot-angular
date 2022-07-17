@@ -1,0 +1,6 @@
+<div class="content-subSection center">
+  <h4>Connexion</h4>
+  <input type="email" name="email" pInputText placeholder="Email" [(ngModel)]="loginInfo.email">
+  <input type="password" pInputText placeholder="Password" [(ngModel)]="loginInfo.password">
+  <button pButton type="button" (click)="login()" label="Se connecter" ></button>
+</div>

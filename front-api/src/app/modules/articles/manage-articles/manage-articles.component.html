@@ -1,0 +1,45 @@
+<section class="main-container">
+      <aside class="filter-aside">
+        <!-- None sense simply to illustrate-->
+      
+        <button pButton type="button" style="float:right;margin-right: 20px;" (click)="reloadData()" icon="pi pi-refresh" class="p-button-secondary" iconPos="left"></button>
+        <button pButton type="button" style="float:right;margin-right: 5px;" routerLink="/article/add" icon="pi pi-plus" class="p-button-success" iconPos="left"></button>
+        
+        <br>
+        <br>
+        <span class="p-buttonset centered" >
+          <button pButton type="button" label="View" routerLink="/article/" ></button>
+          <button pButton type="button" label="Manage" routerLink="/article/manage" ></button>
+      </span>
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input type="text"  pInputText [(ngModel)]="keyword" (keyup)="search()" placeholder="Search">         
+      </span> 
+        <!-- None sense ends here-->
+      </aside>
+   
+    
+     <section class="asideContent-container">
+       <!-- None sense simply to illustrate-->
+       <div *ngIf="articles.length==0"><br><br><h5>You have not posted any articles yet <a routerLink="/article/add">click here </a> to create your first one!</h5></div>
+         <section class="content-subSection article" *ngFor="let article of articles" id={{article.id}}>
+             <span class="date">{{article.date| date:'short' }}</span>
+           <h5>{{article.title}}</h5>
+           <p>{{article.description}}
+               <br>
+             
+          
+           </p>
+           
+           <div name="option">
+               <button class="button btn2" routerLink="/article/edit/{{article.id}}">Edit</button>
+               <button class="button btn1" (click)="delete(article.id)">Delete</button>
+           </div>
+           
+         </section>
+   
+         
+         
+       <!-- None sense ends here-->
+     </section>
+ </section>

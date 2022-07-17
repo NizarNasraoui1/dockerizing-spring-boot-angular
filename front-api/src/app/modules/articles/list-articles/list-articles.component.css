@@ -1,0 +1,53 @@
+.button{
+    background-color: rgb(15,135,255);
+    color: white;
+    padding: 3px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: none;
+}
+.btn1{
+    background-color: rgb(236, 92, 140);
+    color: rgb(20,20,20);
+}
+.btn2{
+    background-color: rgb(255, 185, 35);
+    color: rgb(20,20,20);
+}
+.article{
+    border-radius:20px;
+    border:1px solid rgb(255, 185, 35);
+}
+.article:hover{
+    border:1px solid #343a40;
+    cursor:pointer;
+}
+.author{
+    display:block;
+    float:right;
+    
+}
+.date{
+    float:right;
+    color:#8f99a3;
+}
+.centered{
+    display: block;
+    margin-bottom: 20px;
+}
+.pos-right
+{
+    position: relative;
+    left:200px;
+}
+ul{
+    list-style-type:none;
+}
+ul a{
+    cursor: pointer;
+    text-decoration: none;
+    color: gray;
+}

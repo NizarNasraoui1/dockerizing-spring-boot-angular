@@ -1,0 +1,189 @@
+/*------------------------------------------------------*/
+/*--------------- Template custom font -----------------*/
+/*------------------------------------------------------*/
+
+*{
+    Font-family : 'Cairo', sans-serif;
+}
+*::selection{
+    background-color: rgb(185, 195, 255,0.7);
+}
+html{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+body{
+    background-color: rgb(248, 248, 248);
+    padding: 0;
+    margin: 0;
+}
+p{
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    color: rgb(20,20,20);
+    margin: 0;
+}
+h1,h2,h3,h4,h5,h6{
+    color: rgb(0, 117, 153);
+    margin: 0;
+}
+h1{
+    font-size: 45px;
+    font-weight: 300;
+}
+h2{
+    font-size: 40px;
+    font-weight: 300;
+}
+h3{
+    font-size: 35px;
+    font-weight: 300;
+}
+h4{
+    font-size: 30px;
+    font-weight: 400;
+}
+h5{
+    font-size: 25px;
+    font-weight: 400;
+}
+h6{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/*------------------------------------------------------*/
+/*------------- Nav-bar related classes ----------------*/
+/*------------------------------------------------------*/
+
+.nav-bar{
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(248, 252, 255);
+    box-shadow: 0 0 15px 1px rgba(8, 8, 8,0.2);
+    border-bottom: 3px solid rgb(255, 185, 35);
+}
+.nav-bar .nav-group{
+    padding-right: 25px;
+    float: right;
+    margin: 0;
+}
+.nav-bar .nav-group .nav-item{
+    display: inline-block;
+    margin-left: 15px;
+    font-weight: 300;
+    font-size: 18px;
+    color: rgb(95, 95, 95);
+    cursor: pointer;
+    transition: 0.5s;
+}
+.nav-item:hover{
+    color: #EC5C8C !important;
+    transform: scale(1.05,1.05);
+}
+.active{
+    color: rgb(0, 0, 0) !important;
+    font-weight: 600 !important;
+}
+.logo{
+    float: left;
+    color: rgb(20,20,20);
+    font-size: 18px;
+    font-weight: 600 !important;
+    padding: 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.logo:hover{
+    color: #EC5C8C;
+    transform: scale(1.05,1.05);
+}
+/*------------------------------------------------------*/
+/*------------ containers commun classes ---------------*/
+/*------------------------------------------------------*/
+
+.main-container{
+    padding: 70px 55px 15px 55px;
+    box-sizing: border-box;
+}
+.filter-aside{
+    display: inline-block;
+    vertical-align: top;
+    padding: 25px;
+    width: 25%;
+    margin-left: -10px;
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid rgb(225, 230, 235);
+}
+.fullContent-container{
+    margin: auto;
+    width: 75%;
+}
+.asideContent-container{
+    display: inline-block;
+    margin: auto;
+    vertical-align: top;
+    width: 75%;
+}
+.content-subSection{
+    padding: 25px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid rgb(225, 230, 235);
+}
+
+/*------------------------------------------------------*/
+/*---------------- Responsive design -------------------*/
+/*------------------------------------------------------*/
+
+@media screen and (max-width: 1100px) {
+    .filter-aside{
+        width: 30%;
+    }
+    .fullContent-container{
+        width: 80%;
+    }
+    .asideContent-container{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .filter-aside{
+        width: 35%;
+    }
+    .fullContent-container{
+        width: 85%;
+    }
+    .asideContent-container{
+        width: 65%;
+    }
+    .main-container{
+        padding: 70px 35px 15px 35px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .filter-aside{
+        margin: auto;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+    .fullContent-container{
+        width: 100%;
+    }
+    .asideContent-container{
+        margin: auto;
+        margin-top: 5px;
+        width: 100%;
+    }
+    .main-container{
+        padding: 70px 15px 15px 15px;
+    }
+}

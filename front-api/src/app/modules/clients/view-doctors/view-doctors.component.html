@@ -1,0 +1,44 @@
+<section class="container2">
+    <h1 id="title">Trouvez un médecin en Tunisie</h1>
+    <aside id="filterBar" class="filter-aside">
+        <h5>Filtrer par</h5>
+        <hr>
+        <div class="inputGroup">
+            <i class="pi pi-search addOn-float-right"></i>
+            <input class="inputSearch" type="text" pInputText [(ngModel)]="doctorName" placeholder="Nom du docteur">
+            <button (click)="filterSearch()" class="addOn-left btn-primary">ok</button>
+        </div>
+        <p-dropdown [style]="{'width':'100%', 'marginBottom':'5px', 'height': '40px'}" [options]="specialities" [(ngModel)]="selectedSpecialty" ></p-dropdown>
+        <p-dropdown [style]="{'width':'100%', 'marginBottom':'5px', 'height': '40px'}" [options]="governorates" [(ngModel)]="selectedGovernorate" ></p-dropdown>
+        <button (click)="filterSearch()" class="btn-primary secondColor fullWidth"><i class="pi pi-search pr-10"></i> <span>Rechercher</span></button>
+        <button (click)="resetFilter()" class="btn-primary thirdColor fullWidth"><i class="pi pi-refresh pr-10"></i> <span>Restaurer</span></button>
+    </aside>
+    <section class="asideContent-container">
+        <div id="content" >
+            <div *ngIf="displayedDoctors">
+                <app-doctor-details *ngFor="let doctor of displayedDoctors" [doctor]="doctor"></app-doctor-details>
+            </div>
+            <div *ngIf="displayedDoctors.length==0">
+                <section class="content-subSection">
+                    <h6>Aucun praticien ne correspond à votre recherche</h6>
+                </section>
+            </div>
+        </div>
+    </section>
+</section>
+<svg class="svgBackground" id="visual1" viewBox="0 0 960 540" width="960" height="540" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <g transform="translate(483.76379492739204 202.68407763480155)">
+        <path
+            d="M119.2 -127.6C157.5 -110 193.5 -75.2 218.5 -24.9C243.6 25.4 257.8 91.2 235.5 141.8C213.2 192.4 154.5 227.7 91.2 251.1C27.8 274.4 -40.1 285.7 -104.8 269.9C-169.5 254.2 -230.9 211.5 -248.5 155.7C-266.1 99.9 -239.9 31.1 -204.7 -13.2C-169.6 -57.4 -125.5 -77.2 -89.9 -95.3C-54.2 -113.3 -27.1 -129.7 6.7 -137.6C40.5 -145.6 81 -145.2 119.2 -127.6"
+            fill="#EC5C8C"></path>
+    </g>
+</svg>
+<svg class="svgBackground2" id="visual2" viewBox="0 0 960 540" width="960" height="540" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <g transform="translate(483.76379492739204 202.68407763480155)">
+        <path
+            d="M119.2 -127.6C157.5 -110 193.5 -75.2 218.5 -24.9C243.6 25.4 257.8 91.2 235.5 141.8C213.2 192.4 154.5 227.7 91.2 251.1C27.8 274.4 -40.1 285.7 -104.8 269.9C-169.5 254.2 -230.9 211.5 -248.5 155.7C-266.1 99.9 -239.9 31.1 -204.7 -13.2C-169.6 -57.4 -125.5 -77.2 -89.9 -95.3C-54.2 -113.3 -27.1 -129.7 6.7 -137.6C40.5 -145.6 81 -145.2 119.2 -127.6"
+            fill="#FCAF3C"></path>
+    </g>
+</svg>

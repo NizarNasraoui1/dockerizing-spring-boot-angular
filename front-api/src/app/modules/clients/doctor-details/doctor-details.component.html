@@ -1,0 +1,10 @@
+<section class="content-subSection">
+    <div class="titleContainer">
+        <h5 class="title">{{getName()}}</h5>
+        <button class="addOn-left btn-primary" (click)="getAppointement()"><i class="pi pi-calendar-plus"></i>Prendre Rendez-vous</button>
+    </div>
+    <p class="specialityStatus">{{doctor.speciality}}</p>
+    <p class="address"><i class="pi pi-map"></i>{{doctor.governorate}} : {{doctor.address}}</p>
+    <hr>
+    <p class="primaryDesc">{{doctor.description}}</p>
+</section>

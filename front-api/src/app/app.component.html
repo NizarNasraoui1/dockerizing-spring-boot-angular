@@ -1,0 +1,12 @@
+<!-- Nav bar -->
+<nav class="nav-bar">
+  <h3 (click)="navigateTo('/')" class="logo">MEDCLONE.TN</h3>
+  <ul class="nav-group" >
+    <li *ngFor="let route of routesLinks" class={{route.styleClasses}} (click)="navigateTo(route.url)">{{route.name}}</li>
+  </ul>
+</nav>
+
+<section class="main-container">
+  <router-outlet></router-outlet>
+</section>
+

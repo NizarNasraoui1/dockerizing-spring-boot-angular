@@ -1,0 +1,40 @@
+<section class="main-container">
+    <aside class="filter-aside">
+     
+     
+      
+      <span class="p-buttonset centered" *ngIf="isDoctor()">
+        <button pButton type="button" label="View" routerLink="/article" ></button>
+        <button pButton type="button" label="Manage" routerLink="/article/manage" ></button>
+      </span>
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input type="text"  pInputText [(ngModel)]="keyword" (keyup)="search()" placeholder="Search"> 
+        
+        
+    </span> 
+    <ul>
+     <li *ngFor="let category of categories"  ><a (click)="updateKeyword(category)">{{category}}</a></li>
+  </ul>
+      <!-- None sense ends here-->
+    </aside>
+  
+    <section class="asideContent-container">
+      <!-- None sense simply to illustrate-->
+      <div *ngIf="articles.length==0"><br><br><h2>Sorry, no articles found</h2></div>
+        <section routerLink="/article/view/{{article.id}}" class="content-subSection article" *ngFor="let article of articles" id={{article.id}}>
+            <span class="date">{{article.date| date:'short' }}</span>
+          <h5>{{article.title}}</h5>
+          <p>{{article.description}}
+              <br>
+            <span class="author">Author: {{article.doctor.firstName}} {{article.doctor.lastName}}</span>
+         
+          </p>
+          
+        </section>
+  
+        
+        
+      <!-- None sense ends here-->
+    </section>
+</section>

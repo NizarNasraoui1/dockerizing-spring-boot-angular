@@ -1,0 +1,32 @@
+<div class="calendar">
+    <div class="doctorDiv" *ngIf="this.doctor">
+        <p-avatar
+        class="avatar"
+            icon="pi pi-user"
+            styleClass="p-mr-2"
+            size="xlarge"
+            shape="circle"
+          ></p-avatar>
+        <h4 class="doctor">Dr {{this.doctor.firstName}} {{this.doctor.lastName}}</h4>
+    </div>
+    
+    <h5>Choisissez la date:</h5>
+    
+    <p-calendar (click)="onDateSelected()" 
+    [disabledDates]="invalidDates" [(ngModel)]="date" [inline]="true" [showWeek]="true"></p-calendar>
+</div>
+
+
+
+<div class="selectDate" *ngIf="this.viewDates">
+    <h5>Choisissez l'heure:</h5>
+<button (click)="onHourSelected(date)" *ngFor="let date of this.availableDates" id="dateButton" pButton pRipple type="button" class="p-button-raised p-button-info">
+<p class="date">{{formatDate(date)}}</p>
+</button>
+<br>
+    <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
+<p-button (click)="confirm()" icon="pi pi-check" label="Confirmer"></p-button>
+<p-confirmDialog [style]="{width: '50vw'}" key="positionDialog" [position]="position" [baseZIndex]="10000"></p-confirmDialog>
+<p-messages [value]="msgs"></p-messages>
+</div>
+

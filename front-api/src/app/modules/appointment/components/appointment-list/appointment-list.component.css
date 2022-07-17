@@ -1,0 +1,30 @@
+.date{
+    color:white;
+    font-weight: bold;
+}
+#dateButton{
+    margin-right: 3%;
+    margin-bottom: 3%;
+}
+
+.doctor{
+    display: inline-block;
+    margin-left: 1%;
+}
+.doctorDiv{
+    margin-bottom: 1%;
+}
+h5{
+    margin-top: 1%;
+    margin-bottom: 0.5%;
+}
+.selectDate{
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+    margin-left: 4%;
+    margin-top:8%;
+}
+.calendar{
+    display: inline-block;
+}

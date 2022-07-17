@@ -1,0 +1,19 @@
+<div class="filler"></div>
+
+<section class="fullContent-container">
+    <section class="content-subSection">
+        
+        <input style="display:block" type="text" pInputText [(ngModel)]="article.title" placeholder="Title" name="title">
+        <textarea [rows]="5" [cols]="100" pInputTextarea [(ngModel)]="article.description" placeholder="Description" name="description"></textarea>
+
+        <div>
+            <button class="button btn2" (click)="save()">save</button>
+            <button class="button btn1" routerLink="/article/manage">cancel</button>
+        </div>
+    </section>
+
+
+
+
+
+</section>

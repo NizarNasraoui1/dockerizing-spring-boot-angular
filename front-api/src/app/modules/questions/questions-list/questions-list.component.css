@@ -1,0 +1,65 @@
+/*---------------------------------------------------------*/
+/*-----------  None sense simply to illustrate ------------*/
+/*---------------------------------------------------------*/
+
+button{
+  background-color: rgb(15,135,255);
+  color: white;
+  padding: 3px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: none;
+}
+
+.btn1 {
+  background-color: rgb(236, 92, 140);
+  margin-right: 5px;
+  /*color: rgb(20, 20, 20);*/
+}
+
+.btn2 {
+  background-color: rgb(255, 185, 35);
+  margin-right: 5px;
+  /*color: rgb(20, 20, 20);*/
+}
+
+span {
+  float: right;
+  transform: translate(0, -115px);
+}
+
+.btn3 {
+  background-color: rgb(15, 135, 255);
+}
+
+.centered-content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50em
+}
+
+.title {
+  float: left;
+}
+
+.date {
+  float: right;
+}
+
+.username {
+  width: max-content;
+  margin-left: 90%;
+}
+
+.question-content {
+  color: rgb(0, 35, 75);
+  font-size: large;
+  margin-bottom: 40px;
+}
+
+.buttons {
+  display: inline;
+  margin-left: 63%;
+}

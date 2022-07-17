@@ -1,0 +1,121 @@
+<div id="profileContainer" *ngIf="!updateOn">
+    <div class="fullContent-container" *ngIf="!isDoctor">
+        <div class="content-subSection center">
+            <div class="editBtnContainer">
+                <button (click)="disconnect()" class="signOutBtn btn-primary" type="button"><i
+                    class="pi pi-sign-out"></i><span>Déconnecter</span></button>
+                <button (click)="goToUpdate()" class="editBtn btn-primary" type="button"><i
+                        class="pi pi-user-edit"></i><span>Modifier</span></button>
+            </div>
+            <div class="col-1-2 leftcol">
+                <img src="../../../../assets/images/profile.jpg" alt="">
+            </div>
+            <div class="col-1-2 rightcol">
+                <h6><span>Nom : </span>{{user!.firstName}}</h6>
+                <h6><span>Prenom : </span>{{user!.lastName}}</h6>
+                <h6><span>Email : </span> {{user!.email}}</h6>
+                <h6><span>Téléphone : </span> {{user!.phoneNumber}}</h6>
+            </div>
+        </div>
+    </div>
+    <div class="fullContent-container-doctor" *ngIf="isDoctor">
+        <div class="content-subSection center">
+            <div class="editBtnContainer">
+                <button (click)="disconnect()" class="signOutBtn btn-primary" type="button"><i
+                    class="pi pi-sign-out"></i><span>Déconnecter</span></button>
+                <button (click)="goToUpdate()" class="editBtn btn-primary" type="button"><i
+                        class="pi pi-user-edit"></i><span>Modifier</span></button>
+            </div>
+            <div class="col-1-2 leftcol">
+                <img src="../../../../assets/images/profile.jpg" alt="">
+                <button (click)="goToHistory()" class="btn-history btn-primary" type="button"><i
+                    class="pi pi-calendar"></i><span>Historique des rendez-vous</span></button>
+                <button (click)="goToFuture()" class="btn-future btn-primary" type="button"><i
+                        class="pi pi-users"></i><span>consulter les rendez-vous</span></button>
+            </div>
+            <div class="col-1-2 rightcol doctor">
+                <h6><span>Nom : </span>{{doctor!.firstName}}</h6>
+                <h6><span>Prenom : </span>{{doctor!.lastName}}</h6>
+                <h6><span>Email : </span> {{doctor!.email}}</h6>
+                <h6><span>Téléphone : </span> {{doctor!.phoneNumber}}</h6>
+                <h6><span>Specialitié : </span> {{doctor!.speciality}}</h6>
+                <h6><span>Governorat : </span> {{doctor!.governorate}}</h6>
+                <h6><span>Address : </span> {{doctor!.address}}</h6>
+                <h6><span>Description : </span> {{doctor!.description}} Lorem ipsum dolor, sit amet consectetur
+                    adipisicing elit. Saepe nobis perferendis cupiditate sit? Illum ad nihil iste quas alias voluptatem
+                    impedit. Nesciunt nostrum inventore et, cumque ullam exercitationem deleniti maiores?</h6>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="updateContainer" *ngIf="updateOn">
+    <div class="fullContent-container" *ngIf="!isDoctor">
+        <form [formGroup]="userFormGroup">
+            <div class="content-subSection center">
+                <button class="btn-close" (click)="goToProfile()"><i class="pi pi-times"></i></button>
+                <h5>Modifier vos informations personnelles ?</h5>
+                <div class="col-1-2 leftcol">
+                    <input type="text" name="firstName" pInputText placeholder="Entrer votre prenom"
+                        formControlName="name">
+                    <input type="password" formControlName="password" name="password" pInputText
+                        placeholder="Mot de passe">
+                </div>
+                <div class="col-1-2 rightcol">
+                    <input type="text" name="lastName" pInputText placeholder="Entrer votre nom"
+                        formControlName="familyName">
+                    <input type="password" formControlName="retypedPassword" name="retypedPassword" pInputText
+                        placeholder="Retapez le mot de passe">
+                </div>
+                <div class="col-1-1">
+                    <input type="text" name="phoneNumber" pInputText placeholder="Numéro de téléphone"
+                        formControlName="phoneNumber">
+                    <button pButton type="button" (click)="onSubmit()" label="Soumettre"></button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="fullContent-container" *ngIf="isDoctor">
+        <div class="content-subSection center" *ngIf="isDoctor">
+            <form [formGroup]="userFormGroup">
+                <button class="btn-close" (click)="goToProfile()"><i class="pi pi-times"></i></button>
+                <h5>Modifier vos informations personnelles ?</h5>
+                <div class="col-1-2 leftcol">
+                    <input type="text" name="firstName" pInputText placeholder="Entrer votre prenom"
+                    formControlName="name">
+                    <p-dropdown [style]="{'width':'100%', 'marginBottom':'5px', 'height': '40px'}"
+                        [options]="specialities" formControlName="speciality"></p-dropdown>
+
+                </div>
+                <div class="col-1-2 rightcol">
+                    <input type="text" name="lastName" pInputText placeholder="Entrer votre nom"
+                    formControlName="familyName">
+                    <p-dropdown [style]="{'width':'100%', 'marginBottom':'5px', 'height': '40px'}"
+                        [options]="governorates" formControlName="governorate"></p-dropdown>
+                </div>
+                <div class="col-1-1">
+                    <input type="text" name="phoneNumber" pInputText placeholder="Numéro de téléphone"
+                    formControlName="phoneNumber">
+                    <textarea type="text" pInputText placeholder="Description"
+                    formControlName="description"></textarea>
+                    <input type="password" formControlName="password" pInputText placeholder="Mot de passe">
+                    <input type="password" formControlName="retypedPassword" pInputText placeholder="Retapez le mot de passe">
+                    <button pButton type="button" (click)="onSubmit()" label="Soumettre"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="topDivider" class="custom-shape-divider-top-1645733151 fixed">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"></path>
+    </svg>
+</div>
+<div id="bottomDivider" class="custom-shape-divider-bottom-1645733380 fixed">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"></path>
+    </svg>
+</div>

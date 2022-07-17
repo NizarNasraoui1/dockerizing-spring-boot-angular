@@ -1,0 +1,29 @@
+<div *ngIf="this.appointments" class="grid">
+    <div class="col-12 xl:col-15">
+        <div class="card">
+            <h5>Historique des rendez vous:</h5>
+            <p-table [value]="appointments" [paginator]="true" [rows]="4" responsiveLayout="scroll">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Date</th>
+                        <th>Nom du patient</th>
+                        <th>Prénom du patient</th>
+                        <th>Telephone du patient</th>                        
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-appointment>
+                    <tr>
+                        <td style="width: 15%; min-width: 10rem;">{{this.formatDate(appointment.date)}}</td>
+                        <td style="width: 15%; min-width: 10rem;">{{appointment.user.firstName}}</td>
+                        <td style="width: 15%; min-width: 10rem;">{{appointment.user.lastName}}</td>
+                        <td style="width: 15%;min-width: 10rem;">{{appointment.user.phoneNumber}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+        
+
+    
+    </div>
+
+</div>

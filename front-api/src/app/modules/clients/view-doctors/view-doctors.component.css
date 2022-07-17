@@ -1,0 +1,152 @@
+.btn-primary {
+  background-color: rgb(15, 135, 255);
+  color: white;
+  padding: 3px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.btn-primary:hover {
+  background-color: rgb(88, 171, 255);
+}
+.btn-primary:focus {
+  border: 1px solid rgb(58, 152, 247);
+  box-shadow: 0 0 2px 2px rgb(144, 193, 243);
+}
+.thirdColor {
+  background-color: rgb(245, 114, 157);
+  color: rgb(20, 20, 20);
+}
+.thirdColor:hover {
+  background-color: rgb(253, 155, 188);
+}
+.thirdColor:focus {
+  border: none;
+  box-shadow: 0 0 2px 2px rgb(247, 143, 178);
+}
+
+.secondColor {
+  background-color: rgb(255, 185, 35);
+  color: rgb(20, 20, 20);
+}
+.secondColor:hover {
+  background-color: rgb(248, 205, 113);
+}
+.secondColor:focus {
+  border: none;
+  box-shadow: 0 0 2px 2px rgb(243, 198, 100);
+}
+.fullWidth {
+  width: 100%;
+}
+.pr-10 {
+  padding-right: 10px;
+}
+.addOn-left {
+  display: inline-block;
+  width: 20%;
+  padding: 0;
+  height: 100%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.addOn-float-right {
+  position: absolute;
+  font-size: 17px;
+  top: 17px;
+  left: 10px;
+  color: rgb(90, 90, 90);
+}
+.inputGroup {
+  height: 40px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.inputSearch {
+  height: 100%;
+  width: 80%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-left: 40px;
+}
+.mt-6 {
+  margin-top: 36px;
+}
+.container2 {
+  margin: auto;
+  width: 90%;
+}
+h5 {
+  color: rgb(44, 44, 44);
+}
+hr {
+  border: none;
+  border-top: 0.5px solid rgb(218, 218, 218);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+h1 {
+  font-weight: 600;
+  color: rgb(0, 35, 75);
+}
+.svgBackground {
+  position: fixed;
+  bottom: -200px;
+  rotate: 50deg;
+  left: -100%;
+  transition: 0.7s;
+  z-index: -1;
+}
+.svgBackground2 {
+  position: fixed;
+  rotate: 50deg;
+  top: -200px;
+  transition: 0.7s;
+  right: -100%;
+  z-index: -1;
+}
+#title {
+  transition: 0.7s;
+  margin-left: -100%;
+}
+#content {
+  transition: 2s;
+  margin-top: -120%;
+}
+.asideContent-container{
+    overflow-y: hidden;
+}
+@media screen and (min-width: 900px) {
+  .filter-aside {
+    width: 300px;
+    position: fixed;
+    transition: 0.7s;
+    top: 100%;
+  }
+  .stickTop {
+    top: 70px !important;
+  }
+  .asideContent-container {
+    margin-left: 300px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .filter-aside {
+    width: 300px;
+    position: fixed;
+  }
+  .stickTop {
+    top: 70px !important;
+  }
+  .asideContent-container {
+    margin-left: 300px;
+    width: 70%;
+  }
+}

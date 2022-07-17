@@ -1,0 +1,26 @@
+<section class="main-container">
+
+  <!-- medicines / pharmacy / servey-question / client / appointement -->
+
+  <section class="centered-content">
+    <button (click)="add()">Add Question</button>
+
+    <!-- None sense simply to illustrate-->
+    <section class="content-subSection" *ngFor="let question of questions">
+      <section>
+        <h5 class="title">{{question.title | titlecase}}</h5>
+        <h6 class="date">{{question.date | date: 'dd-mm-yyyy'}}</h6><br/>
+        <h6 class="username">{{question.user.firstName | titlecase}}  {{question.user.lastName | titlecase}}</h6>
+      </section>
+      <br/>
+      <section>
+        <p class="question-content">{{question.content}}</p>
+      </section>
+      <div class="buttons">
+        <button *ngIf="id==question.user.id" (click)="delete(question.id)" class="btn1">Delete</button>
+        <button *ngIf="id==question.user.id" (click)="update(question.id)" class="btn2">Modify</button>
+        <button (click)="checkDetails(question.id)" class="btn2 btn3">Details</button>
+      </div>
+    </section>
+  </section>
+</section>
