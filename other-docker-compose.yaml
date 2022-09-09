@@ -1,0 +1,48 @@
+version: '3.8'
+services:
+  nginx:
+    container_name: nginx
+    image: "repo1.igesa.it/backup-compose-vanity_nginx_1"
+    hostname: "nginx"
+    ports:
+      - 80:80
+      - 443:443
+      - 322:322
+      - 3000:3000
+    links:
+      - vanity
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+      - ./data/nginx:/etc/nginx/conf.d
+    networks:
+      - van
+  nginx1:
+    image: "repo1.igesa.it/compose-vanity_nginx1_1"
+    hostname: "nginx1"
+    ports:
+      - 5300:5300
+      - 522:522
+    networks:
+      - van
+  certbot:
+    image: certbot/certbot
+    restart: unless-stopped
+    container_name: certbot
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+  postgres:
+    image: "postgres12"
+    hostname: "postgres"
+    ports:
+      - 122:122
+      - 5432:5432
+    environment:
+        POSTGRES_PASSWORD: mss#123
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - van
+  vanity:
