@@ -12,6 +12,7 @@ services:
 
   mysqldb:
     image: mysql
+    container_name: mysqldb
     restart: unless-stopped
     # env_file: ./.env
     environment:
