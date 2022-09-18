@@ -1,8 +1,5 @@
 pipeline{
     agent any
-    environment {
-        DOCKER_PASSWORD='#Nizar122169'
-    }
     stages{
         stage('clone repository'){
            steps{
